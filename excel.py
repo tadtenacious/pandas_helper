@@ -8,8 +8,6 @@ def write_excel(dataframe, outFile):
         outFile += '.xlsx'
     writer = pd.ExcelWriter(outFile, date_format='m/d/yyyy',
                             datetime_format='m/d/yyyy')
-    # writer = pd.ExcelWriter(outFile,date_format='m/d/yyyy',
-    #                         datetime_format='m/d/yyyy')
     dataframe.to_excel(writer, index=False)
     wb = writer.book
     ws = writer.sheets['Sheet1']
